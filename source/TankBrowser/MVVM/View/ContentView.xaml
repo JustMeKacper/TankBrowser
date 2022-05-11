@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="TankBrowser.MVVM.View.ContentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TankBrowser.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="530" d:DesignWidth="720">
+    <StackPanel Margin="0,0,0,0" x:Name="ContenViewInjection">
+        <DockPanel Width="720" Height="530" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <!--<TextBlock x:Name="titleName"
+                           Text="Maus" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Foreground="White"
+                           FontSize="22"
+                           Margin="100,-330,0,0"
+                           Visibility="Visible"/>-->
+            <ComboBox Width="150" Height="50" 
+                      VerticalAlignment="Top"
+                      Margin="70,70,0,0"
+                      Background="#353340"
+                      Foreground="White"
+                      FontSize="15"
+                      Padding="10"
+                      FontFamily="Comic Sans MS"
+                      HorizontalContentAlignment="Center"
+                      VerticalContentAlignment="Center"
+                      x:Name="ListViewTanks" 
+                      Text="Text"
+                      SelectionChanged="ListViewTanks_SelectionChanged"
+                      Style="{StaticResource {x:Static ToolBar.ComboBoxStyleKey}}" BorderBrush="{x:Null}">
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="ComboBoxItem">
+                        <Setter Property="Background" Value="#353340"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+
+            <TextBlock x:Name="DescribeTank" 
+                       Margin="50,-300,0,0"
+                       Width="442" Height="220"
+                       Background="#353340" 
+                       Foreground="White"
+                       Padding="10" TextWrapping="Wrap">
+                <Run Language="pl-pl" Text="Jakiś opis"/>
+                <LineBreak/>
+                <Run Language="pl-pl"/>
+            </TextBlock>
+            <Image x:Name="tankImage" 
+                   Width="629" Height="300" 
+                   Source="C:\Users\repca\Desktop\Studia\TankBrowser\Debug\images\maus.png"
+                   Margin="-640,230,0,0"/>
+        </DockPanel>
+    </StackPanel>
+</UserControl>

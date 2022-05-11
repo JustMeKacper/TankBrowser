@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="TankBrowser.MVVM.View.AddTankContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TankBrowser.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="530" d:DesignWidth="720">
+    <StackPanel Margin="0,0,0,0" x:Name="ContenViewInjection">
+        <Label Width="130" Height="50"
+               HorizontalAlignment="Left"
+               Content="Tank Name"
+               FontSize="15"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"
+               Margin="45,30"
+               FontFamily="Comic Sans MS"
+               Foreground="White"/>
+        <Label Width="160" Height="45"
+                 HorizontalAlignment="Right"
+                 Margin="45,-160,160,0"
+                 Foreground="White"
+                 FontSize="15"
+                 Content="Tank Description"
+                 FontFamily="Comic Sans MS"
+                 Padding="10" BorderBrush="{x:Null}"/>
+        <TextBox Width="130" Height="45"
+                 x:Name="AddTankName"
+                 HorizontalAlignment="Left"
+                 Margin="45,-30,0,0"
+                 Background="#353340"
+                 Foreground="White"
+                 FontSize="15"
+                 FontFamily="Comic Sans MS"
+                 Padding="10" BorderBrush="{x:Null}"/>
+
+
+        <Button x:Name="SaveAddButton" Width="90" Height="30" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left"
+                Margin="60,10,30,30"
+                Content="Save"
+                Background="#353340"
+                Foreground="White"
+                FontFamily="Comic Sans MS"
+                FontSize="15" BorderBrush="{x:Null}" Click="SaveAddButton_Click"/>
+
+        <Button x:Name="AddImageButton" Grid.Row="1"  
+                Content="Add Image" 
+                Background="#353340"
+                Foreground="White"
+                HorizontalAlignment="Left"
+                Width="210" Height="30"
+                Margin="0,-20,0,0"
+                FontFamily="Comic Sans MS"
+                FontSize="15" BorderBrush="{x:Null}" Click="AddImageButton_Click"/>
+
+        <TextBox x:Name="AddDescribeTank" 
+                 Margin="0,-160,20,0"
+                 HorizontalAlignment="Right"
+                 Width="442" Height="175"
+                 Background="#353340" 
+                 Foreground="White"
+                 Padding="10" 
+                 TextWrapping="Wrap" 
+                 BorderBrush="{x:Null}"/>
+        <Image Height="250" 
+               Margin="0,10,0,0" 
+               x:Name="AddedImage"/>
+
+
+
+
+
+    </StackPanel>
+</UserControl>

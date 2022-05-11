@@ -1,0 +1,29 @@
+﻿<Application x:Class="TankBrowser.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TankBrowser"
+             xmlns:viewModel="clr-namespace:TankBrowser.MVVM.ViewModel"
+             xmlns:view="clr-namespace:TankBrowser.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:ContentViewModel}">
+                <view:ContentView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:EditContentViewModel}">
+                <view:EditContentView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AddContentViewModel}">
+                <view:AddTankContent/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,91 @@
+﻿<Window x:Class="TankBrowser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:TankBrowser.MVVM.ViewModel"
+        xmlns:local="clr-namespace:TankBrowser"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="920"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
+    
+    <Border Background="#272537"
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Text="TankTastic" 
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       FontSize="22"
+                       Margin="20,0,0,0"/>
+
+            <StackPanel Grid.Row="2">
+                <RadioButton x:Name="RevievRadioButton" Content="Review"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding ContentViewCommand}"/>
+                <RadioButton x:Name="EditRadioButton" Content="Edit"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding EditContentViewCommand}"/>
+                <RadioButton x:Name="AddRadioButton" Content="Add"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding AddTankContentViewCommand}"/>
+            </StackPanel>
+            <Image x:Name="ExitButton" Grid.Column="2" 
+                   Grid.Row="0" 
+                   HorizontalAlignment="Right" 
+                   Height="45" 
+                   VerticalAlignment="Top" 
+                   Width="100"
+                   Margin="0,12,25,10"
+                   Source="C:\Users\repca\Desktop\Studia\TankBrowser\Debug\images\exit.png" MouseDown="ExitButton_MouseDown"/>
+            <StackPanel Grid.Row="1"/>
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" Visibility="Hidden">
+                <Button x:Name="Increment_Btn" Height="45" 
+                        Margin="0,15,0,15" 
+                        Content="Up" 
+                        FontSize="15" 
+                        Foreground="White"
+                        FontFamily="Comic Sans MS" 
+                        Background="#272537" Click="Increment_Btn_click"/>
+                
+                <Button x:Name="Decrement_Btn" Height="45" 
+                        Margin="0,15,0,15" 
+                        Content="Down" 
+                        FontSize="15" 
+                        FontFamily="Comic Sans MS" 
+                        Foreground="White"
+                        Background="#272537" Click="Decrement_Btn_click"/>
+            </StackPanel>
+            <ContentControl Grid.Row="1" 
+                            Grid.RowSpan="2"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+        </Grid>
+    </Border>
+</Window>
